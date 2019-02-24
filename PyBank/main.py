@@ -36,20 +36,21 @@ with open (csvpath, newline='') as excelfile:
     max_index = change_lst.index(max(change_lst))
     min_index = change_lst.index(min(change_lst))
 
-    #Final output
-    print("Financial Analysis")
+    #Final output - Print the analysis to the terminal
+    print("\nFinancial Analysis")
     print("-------------------------")
     print(f'Total Months: {len(uniquemonths)}')
     print(f'Total: ${total}')
     print(f'Average Change: $ {round(sum(change_lst)/len(change_lst), 2)}')
     print(f'Greatest Increase in Profits: {date_lst[max_index+1]} $ {change_lst[max_index]}')
     print(f'Greatest Decrease in Profits: {date_lst[min_index+1]} $ {change_lst[min_index]}')
- 
 
-
-
-
-
-
-
-        
+#print the analysis to the terminal
+with open("Output_PyBank.txt", "w") as text_file:
+    print("Financial Analysis", file = text_file)
+    print("-------------------------", file = text_file)
+    print(f'Total Months: {len(uniquemonths)}', file = text_file)
+    print(f'Total: ${total}', file = text_file)
+    print(f'Average Change: $ {round(sum(change_lst)/len(change_lst), 2)}', file = text_file)
+    print(f'Greatest Increase in Profits: {date_lst[max_index+1]} $ {change_lst[max_index]}', file = text_file)
+    print(f'Greatest Decrease in Profits: {date_lst[min_index+1]} $ {change_lst[min_index]}', file = text_file)
