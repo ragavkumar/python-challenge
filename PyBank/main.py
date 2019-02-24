@@ -45,7 +45,7 @@ with open (csvpath, newline='') as excelfile:
     print(f'Greatest Increase in Profits: {date_lst[max_index+1]} $ {change_lst[max_index]}')
     print(f'Greatest Decrease in Profits: {date_lst[min_index+1]} $ {change_lst[min_index]}')
 
-#print the analysis to the terminal
+#Export a text file with the results
 with open("Output_PyBank.txt", "w") as text_file:
     print("Financial Analysis", file = text_file)
     print("-------------------------", file = text_file)
